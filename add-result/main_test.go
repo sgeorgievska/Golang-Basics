@@ -21,3 +21,13 @@ func TestAdd(t *testing.T) {
 		}
 	}
 }
+
+func TestReadFile(t *testing.T) {
+	data, err := ioutil.ReadFile("test.data")
+	if err != nil {
+		t.Fatal("Could not open the file")
+	}
+	if string(data) != "Hey Everyone" {
+		t.Fatal("Content is not matching")
+	}
+}
